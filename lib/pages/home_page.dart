@@ -21,7 +21,10 @@ class HomePage extends StatelessWidget {
         ),
         body: Column(children: [
           Expanded(child: UserList()),
-          ActionButtons(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ActionButtons(),
+          ),
         ]),
       ),
     );
