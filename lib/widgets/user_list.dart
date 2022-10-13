@@ -10,13 +10,13 @@ class UserList extends StatelessWidget {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, state) {
         if (state is UserInitial) {
-          return Center(child: Text('Empty. Press Load'));
+          return const Center(child: Text('Empty. Press Load'));
         }
         if (state is UserLoadingState) {
-          return Center(child: CircularProgressIndicator(color: Colors.green,));
+          return const Center(child: CircularProgressIndicator(color: Colors.green,));
         }
         if (state is UserErrorState) {
-          return Center(child: CircularProgressIndicator(color: Colors.red,));
+          return const Center(child: CircularProgressIndicator(color: Colors.red,));
         }
         if (state is UserLoadedState) {
           return ListView.builder(
@@ -26,22 +26,22 @@ class UserList extends StatelessWidget {
               child: ListTile(
                 leading: Text(
                   'Id: ${state.loadedUser[index].id}',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'Name: ${state.loadedUser[index].name}',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text(
                       'Email: ${state.loadedUser[index].email}',
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style: const TextStyle(fontStyle: FontStyle.italic),
                     ),
                     Text(
                       'Phone: ${state.loadedUser[index].phone}',
-                      style: TextStyle(fontStyle: FontStyle.italic),
+                      style: const TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ],
                 ),
@@ -49,7 +49,7 @@ class UserList extends StatelessWidget {
             ),
           );
         }
-        return Center(child: CircularProgressIndicator(color: Colors.amber,));
+        return const Center(child: CircularProgressIndicator(color: Colors.amber,));
       },
     );
   }

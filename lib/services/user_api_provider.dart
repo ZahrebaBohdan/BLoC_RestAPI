@@ -12,8 +12,6 @@ class UserProvider {
 
     if (response.statusCode == 200) {
       final List userJson = jsonDecode(response.body);
-      print(userJson);
-      print(userJson.runtimeType);
       return userJson.map((json) => User.fromJson(json)).toList();
     } else {
       throw Exception('Error fetching users');

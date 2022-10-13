@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Users List'),
         ),
-        body: Column(children: [
-          Expanded(child: UserList()),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+        body: Column(children: const [
+           Expanded(child: UserList()),
+           Padding(
+            padding: EdgeInsets.all(8.0),
             child: ActionButtons(),
           ),
         ]),
